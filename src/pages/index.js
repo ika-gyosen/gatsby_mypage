@@ -1,15 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 export default class IndexPage extends React.Component {
   render() {
     const { siteMetadata } = this.props.data.site;
     const buildTime = this.props.data.siteBuildMetadata.buildTime;
-    const md = this.props.data.mdbody.edges[0].node.body.childMarkdownRemark;
-    console.log(md);
     return (
       <div>
         <h1>{siteMetadata.title}</h1>
+        <Img fixed={this.props.data.file.childImageSharp.fixed} />
+
         <p>
           build :
           <ShowDate datevalue={buildTime} />
@@ -31,16 +32,10 @@ export const query = graphql`
     siteBuildMetadata {
       buildTime
     }
-    mdbody: allContentfulBlogPost {
-      edges {
-        node {
-          body {
-            childMarkdownRemark {
-              html
-            }
-          }
-          title
-          updatedAt
+    file(relativePath: { eq: "top_1.jpg" }) {
+      childImageSharp {
+        fixed(width: 400) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
