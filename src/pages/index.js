@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 import SEO from "../components/SEO";
 
@@ -12,7 +13,9 @@ export default class IndexPage extends React.Component {
         <SEO />
         <h1>{siteMetadata.title}</h1>
         <Img fixed={this.props.data.file.childImageSharp.fixed} />
-
+        <div>
+          <Link to={`/info/`}>info</Link>
+        </div>
         <p>
           build :
           <ShowDate datevalue={buildTime} />
