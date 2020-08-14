@@ -1,3 +1,20 @@
+#gatsby-starter-minimal's settings
 .cache
 node_modules
 public
+
+# dotenv
+.env
+.env*
+
+# Mac files
+.DS_Store
+
+#vscode 
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history
