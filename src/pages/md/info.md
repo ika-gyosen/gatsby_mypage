@@ -8,7 +8,7 @@ date: "2020-08-15"
 [Vektroid - Wikipedia](https://ja.wikipedia.org/wiki/Vektroid)  
 [https://qetic.jp/music/jamiroquai-sapporo-180418/283651/](https://qetic.jp/music/jamiroquai-sapporo-180418/283651/)
 
-![エビフライトライアングル](/src/images/top_1.jpg)
+![indeximage](../../images/top_1.jpg)
 
 # About me
 
