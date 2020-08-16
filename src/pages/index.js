@@ -3,15 +3,37 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import SEO from "../components/SEO";
+import Layout from "../components/header";
 
 export default class IndexPage extends React.Component {
   render() {
     const { siteMetadata } = this.props.data.site;
     const buildTime = this.props.data.siteBuildMetadata.buildTime;
     return (
-      <div>
+      <Layout>
         <SEO />
-        <h1>{siteMetadata.title}</h1>
+        <div
+          style={{
+            background: `#000022`,
+            padding: `8px`,
+            width: `60%`,
+            margin: "10px",
+          }}
+        >
+          <h1
+            style={{
+              color: `#99FFFF`,
+              fontStretch: `italic`,
+              border: `solid`,
+              background: `#000022`,
+              border_color: `#99FFFF`,
+              padding: `3px`,
+              margin: `10px`,
+            }}
+          >
+            {siteMetadata.title}
+          </h1>
+        </div>
         <Img fixed={this.props.data.file.childImageSharp.fixed} />
         <div>
           <Link to={`/info/`}>info</Link>
@@ -20,7 +42,7 @@ export default class IndexPage extends React.Component {
           build :
           <ShowDate datevalue={buildTime} />
         </p>
-      </div>
+      </Layout>
     );
   }
 }
