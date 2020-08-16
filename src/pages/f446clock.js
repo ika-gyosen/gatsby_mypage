@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../components/header";
 
 export default class InfoPage extends React.Component {
   render() {
