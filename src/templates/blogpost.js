@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
+import Layout from "../components/header";
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -11,23 +12,25 @@ class BlogPostTemplate extends React.Component {
     const updatedAt = this.props.data.contentfulBlogPost.updatedAt;
     const createdAt = this.props.data.contentfulBlogPost.createdAt;
     return (
-      <div>
+      <Layout>
         <div>
-          <h1>{title}</h1>
-          <p>
-            <ShowDate datevalue={createdAt} />
-          </p>
-          <p>
-            <ShowDate datevalue={updatedAt} />
-          </p>
+          <div>
+            <h1>{title}</h1>
+            <p>
+              <ShowDate datevalue={createdAt} />
+            </p>
+            <p>
+              <ShowDate datevalue={updatedAt} />
+            </p>
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: md_body }}></div>
+          <div>
+            {prev !== 0 ? <Link to={`/blogpost/${prev}`}>prev</Link> : ""}
+            <br />
+            {next !== 0 ? <Link to={`/blogpost/${next}`}>next</Link> : ""}
+          </div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: md_body }}></div>
-        <div>
-          {prev !== 0 ? <Link to={`/blogpost/${prev}`}>prev</Link> : ""}
-          <br />
-          {next !== 0 ? <Link to={`/blogpost/${next}`}>next</Link> : ""}
-        </div>
-      </div>
+      </Layout>
     );
   }
 }
