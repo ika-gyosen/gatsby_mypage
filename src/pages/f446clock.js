@@ -4,11 +4,13 @@ export default class InfoPage extends React.Component {
   render() {
     const mbody = this.props.data.mbody.html;
     return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: mbody,
-        }}
-      ></div>
+      <Layout>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: mbody,
+          }}
+        ></div>
+      </Layout>
     );
   }
 }
