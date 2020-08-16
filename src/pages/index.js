@@ -12,31 +12,11 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO />
-        <div
-          style={{
-            background: `#000022`,
-            padding: `8px`,
-            width: `60%`,
-            margin: "10px",
-          }}
-        >
-          <h1
-            style={{
-              color: `#99FFFF`,
-              fontStretch: `italic`,
-              border: `solid`,
-              background: `#000022`,
-              border_color: `#99FFFF`,
-              padding: `3px`,
-              margin: `10px`,
-            }}
-          >
-            {siteMetadata.title}
-          </h1>
-        </div>
         <Img fixed={this.props.data.file.childImageSharp.fixed} />
         <div>
-          <Link to={`/info/`}>info</Link>
+          <Link to={`/info/`}>info</Link>{" "}
+          <Link to={`/blogpost/`}>活動記録</Link>{" "}
+          <Link to={`/reports/`}>レポート</Link>
         </div>
         <p>
           build :

@@ -1,20 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
+import Layout from "../components/header";
 
 export default class Blogposts extends React.Component {
   render() {
     console.log(this.props.data.allContentfulBlogPost.edges);
     return (
-      <ul>
-        {this.props.data.allContentfulBlogPost.edges.map(({ node }) => {
-          return (
-            <li>
-              <Link to={`/blogpost/${node.slug}`}>{node.title}</Link>
-              {"  "} <ShowDate datevalue={node.createdAt} />
-            </li>
-          );
-        })}
-      </ul>
+      <Layout>
+        <ul>
+          {this.props.data.allContentfulBlogPost.edges.map(({ node }) => {
+            return (
+              <li>
+                <Link to={`/blogpost/${node.slug}`}>{node.title}</Link>
+                {"  "} <ShowDate datevalue={node.createdAt} />
+              </li>
+            );
+          })}
+        </ul>
+      </Layout>
     );
   }
 }
