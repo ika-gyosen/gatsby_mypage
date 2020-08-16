@@ -18,7 +18,7 @@ date: "2020-08-15"
 - mail: s.sakai4223★gmail.com
 
 STM32 マイコンが多少出来ます(IDE なし、コードジェネレータなし)  
-Python でウェブクローラやローカルファイル検索など作ったことがあります。  
+Python でスクレイピングやローカルファイル検索など作ったことがあります。  
 このサイトは Gatsby.js+contentful+netlify で作りました。minimal-starter から作成しています。  
 PHP,MySQL,WordPress も多少触りました。
 
